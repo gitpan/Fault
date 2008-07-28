@@ -3,24 +3,9 @@
 # Description:         Logger delegate for simple http logging.
 # Original Author:     Dale M. Amon
 # Revised by:          $Author: amon $ 
-# Date:                $Date: 2008-05-09 18:24:55 $ 
-# Version:             $Revision: 1.7 $
+# Date:                $Date: 2008-07-24 21:17:24 $ 
+# Version:             $Revision: 1.8 $
 # License:	       LGPL 2.1, Perl Artistic or BSD
-#
-# TODO	* It would be nice if initfaults got retried if it failed. I am
-#	  just returning an empty list in that case, but that means I
-#	  will never get synced up if the web logger was down when this
-#	  program started and then came on line *later*. Worst case is
-#	  that the remote user will have to clear some faults manually or
-#	  wait until this program is started up at a time when the web
-#	  logger is functioning. [DMA20080416-?]
-#
-#	* A sample set of cgi scripts implimenting the protocol would be
-#	  useful to potential users. [DMA20080508-?]
-#
-#	* Perhaps add a flag to show it failed? But the results must be
-#	  used at the Logger level so this does not entirely solve the
-#	  problem.	[DMA20080503-?]
 #
 #=============================================================================
 use strict;
@@ -539,6 +524,9 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: SimpleHttp.pm,v $
+# Revision 1.8  2008-07-24 21:17:24  amon
+# Moved all todo notes to elsewhere; made Stderr the default delegate instead of Stdout.
+#
 # Revision 1.7  2008-05-09 18:24:55  amon
 # Bugs and changes due to pre-release testing
 #

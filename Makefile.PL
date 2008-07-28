@@ -2,7 +2,7 @@
 # Copyright (C) 2008 Fault
 #
 
-$VERSION = '1.00';
+$VERSION = '1.01-1';
 
 use ExtUtils::MakeMaker;
 # See lib/ExtUtils/MakeMaker.pm for details of how to influence

@@ -1,3 +1,10 @@
+libfault-perl (1.01-1) unstable; urgency=low
+
+  * Added Fault::Notepad and Fault::Delegate::Stderr classes.
+    Changed default Delegate class from Stdout to Stderr.
+
+ -- Dale Amon <amon@vnl.com>  Tue, 24 Jul 2008 21:54:30 +0100
+
 libfault-perl (1.00-1) unstable; urgency=low
 
   * Changed name space to Fault:: and pared down the 

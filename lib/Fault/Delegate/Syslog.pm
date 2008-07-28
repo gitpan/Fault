@@ -3,12 +3,9 @@
 # Description:          Syslog logger delegate
 # Original Author:      Dale M. Amon
 # Revised by:           $Author: amon $ 
-# Date:                 $Date: 2008-05-09 18:24:55 $ 
-# Version:              $Revision: 1.6 $
+# Date:                 $Date: 2008-07-24 21:17:24 $ 
+# Version:              $Revision: 1.7 $
 # License:		LGPL 2.1, Perl Artistic or BSD
-#
-# TODO	* Is it possible to succeed opening the syslog and then fail to log 
-#         a msg?
 #
 #=============================================================================
 use strict;
@@ -166,6 +163,9 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: Syslog.pm,v $
+# Revision 1.7  2008-07-24 21:17:24  amon
+# Moved all todo notes to elsewhere; made Stderr the default delegate instead of Stdout.
+#
 # Revision 1.6  2008-05-09 18:24:55  amon
 # Bugs and changes due to pre-release testing
 #

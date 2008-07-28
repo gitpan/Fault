@@ -3,11 +3,9 @@
 # Description:         Internal message encapsulation class.
 # Original Author:     Dale M. Amon
 # Revised by:          $Author: amon $ 
-# Date:                $Date: 2008-05-07 18:38:20 $ 
-# Version:             $Revision: 1.2 $
+# Date:                $Date: 2008-07-24 21:17:24 $ 
+# Version:             $Revision: 1.6 $
 # License:	       LGPL 2.1, Perl Artistic or BSD
-#
-# TODO	* I do not yet have any way to dump the list of errors.
 #
 #=============================================================================
 use strict;
@@ -43,6 +41,7 @@ sub _processname ($) {(defined $::PROCESS_NAME) ?
 #-----------------------------------------------------------------------------
 #                         INSTANCE METHODS
 #-----------------------------------------------------------------------------
+# Test line without \n as Posix will complain other wise.
 
 sub _validate_msg ($;$) {
     my ($s,$m) = @_;
@@ -53,11 +52,14 @@ sub _validate_msg ($;$) {
 				("Message cannot be a pointer.");
 				$m = $DFT_MSG; }
 
-    elsif (!POSIX::isprint $m) {push @{$s->{'err'}}, 
-				("Message contains non-printable char: " .
-				 "\'$m\'.");
-				$m = $DFT_MSG; }
-
+    else {
+      chomp $m;
+      if (!POSIX::isprint $m)  {push @{$s->{'err'}}, 
+				  ("Message contains POSIX non-printable char: " .
+				   "\'$m\'.");
+				$m = $DFT_MSG;
+			       }
+    }
     return $m;
 }
 
@@ -376,6 +378,10 @@ Create an instance of $Fault::Msg for the message, type
 and priority specified. If values are undef, defaults will
 be used for the missing values.
 
+If the message ends with a newline, it is removed. If there
+are embedded format chars the line will be rejected by 
+POSIX::printable.
+
 =head1 Instance Methods
 
 =over 4
@@ -414,6 +420,10 @@ Return the messages originating process name.
 
 Set the base message string. An undefined value will set the blank
 message flag and set the base message to an informative default message.
+
+If the message ends with a newline, it is removed. If there
+are embedded format chars the line will be rejected by 
+POSIX::printable.
 
 =item B<$p = $self-E<gt>set_priority ($p)>
 
@@ -478,6 +488,12 @@ Return a line formatted for use in a syslog format:
 
  None.
 
+=head1 KNOWN BUGS
+
+POSIX::isprint is used to filter whether a message is junk or not.
+It should probably make an effort to sanitize the string of format
+characters rather than reject a potentially good message.
+
 =head1 Errors and Warnings
 
  None.
@@ -496,6 +512,21 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: Msg.pm,v $
+# Revision 1.6  2008-07-24 21:17:24  amon
+# Moved all todo notes to elsewhere; made Stderr the default delegate instead of Stdout.
+#
+# Revision 1.5  2008-07-24 19:11:29  amon
+# Notepad now uses Fault::Msg class which moves all the timestamp and 
+# digitalsig issues to Msg.
+#
+# Revision 1.4  2008-07-23 22:56:30  amon
+# I forgot chomp does not return the chomped string. Fixed the code 
+# accordingly.
+#
+# Revision 1.3  2008-07-23 22:32:51  amon
+# chomp line ends in Msg class rather than fail unconditionally due to 
+# POSIX::isprint.
+#
 # Revision 1.2  2008-05-07 18:38:20  amon
 # Documentation fixes.
 #

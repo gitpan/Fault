@@ -3,27 +3,9 @@
 # Description:          A fault handling logger
 # Original Author:      Dale M. Amon
 # Revised by:           $Author: amon $ 
-# Date:                 $Date: 2008-05-10 15:19:44 $ 
-# Version:              $Revision: 1.8 $
+# Date:                 $Date: 2008-07-24 21:17:24 $ 
+# Version:              $Revision: 1.10 $
 # License:		LGPL 2.1, Perl Artistic or BSD
-#
-# TODO	* I may not be sufficiently cleansing filename and some other input
-#	  strings. I need to do a security audit. [DMA20080506-?]
-#
-#	* Need to do an extensive final test. [DMA20080506-?]
-#
-#	* The Msg object is collecting error information I am not yet
-#	  logging anywhere. [DMA20080507-?]
-#
-#	* Since I am now saving the previous Msg object, I can in theory
-#	  retrieve pretty much everything about the last fault/log call.
-#	  I would have to extend the user API, either more methods here
-#	  or one method to return the message object and then suggest
-#	  'releasing' that API to the wild instead of keeping it internal
-#	  and changeable. [DMA20080507-?]
-#
-#	* I may want to split much of the general perldoc documentation 
-#	  out of here and into a dummy Fault.pm package. [DMA20080508-?]
 #
 # NOTE  * Care must be taken that no matter what user API call is used
 #	  first, LOGGER is initialized and the local $self or $s value is
@@ -39,6 +21,7 @@
 use strict;
 use POSIX;
 use Fault::Delegate::Stdout;
+use Fault::Delegate::Stderr;
 use Fault::Delegate::List;
 use Fault::Msg;
 
@@ -55,7 +38,7 @@ my %once    = ();
 sub new {
     my ($class,@l)         = @_;
     $LOGGER || ($LOGGER    = bless {}, $class);
-    @l      || (@l         = (Fault::Delegate::Stdout->new));
+    @l      || (@l         = (Fault::Delegate::Stderr->new));
     $LOGGER->{'message'}   = undef;
     %once                  = ();
     $LOGGER->{'delegates'} = Fault::Delegate::List->new (@l);
@@ -663,6 +646,7 @@ different from that of the parent process.
 
  use Fault::Logger;
  use Fault::Delegate::Stdout;
+ use Fault::Delegate::Stderr;
  use Fault::Delegate::Syslog;
  use Fault::Delegate::File;
 
@@ -724,7 +708,7 @@ a class object, and further calls simply return the same pointer. It
 can be accessed either by classname or the returned pointer.
 
 By supplying a list of one or more delegate objects, you modify where and 
-how your program will log and fault. The defaults is a Fault::Delegate::Stdout
+how your program will log and fault. The defaults is a Fault::Delegate::Stderr
 object if no delegate is supplied the first time new is called. On any
 subsequent calls, the default is to leave the delegate object as is.
 
@@ -788,7 +772,7 @@ if not present.
 This method is useful for checking subroutine args.
 
 =item B<$notfault = Fault::Logger-E<gt>assertion_check ($cond,$tag,$msg,$type,$priority,$target,@rest)>
-n
+
 =item B<$notfault = $proxy-E<gt>assertion_check ($cond,$tag,$msg,$type,$priority,$target,@rest)>
 
 If the condition flag is true log the message. This is much like log except 
@@ -918,9 +902,9 @@ None.
 
 =head1 SEE ALSO
 
-Fault::Delegate, Fault:Delegate::Stdout, Fault:Delegate::File, 
-Fault:Delegate::Syslog, Fault:Delegate::DB, Fault:Delegate::SimpleHttp, 
-Fault::Delegate::List
+Fault::Delegate, Fault:Delegate::Stdout, Fault:Delegate::Stderr,
+Fault:Delegate::File, Fault:Delegate::Syslog, Fault:Delegate::DB, 
+Fault:Delegate::SimpleHttp, Fault::Delegate::List
 
 =head1 AUTHOR
 
@@ -932,6 +916,13 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: Logger.pm,v $
+# Revision 1.10  2008-07-24 21:17:24  amon
+# Moved all todo notes to elsewhere; made Stderr the default delegate instead of Stdout.
+#
+# Revision 1.9  2008-07-23 22:32:51  amon
+# chomp line ends in Msg class rather than fail unconditionally due to 
+# POSIX::isprint.
+#
 # Revision 1.8  2008-05-10 15:19:44  amon
 # Minor doc changes before release
 #

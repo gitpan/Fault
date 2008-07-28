@@ -11,9 +11,11 @@ lib/Fault/DebugPrinter.pm
 lib/Fault/ErrorHandler.pm
 lib/Fault/Logger.pm
 lib/Fault/Msg.pm
+lib/Fault/Notepad.pm
 lib/Fault/Delegate.pm
 lib/Fault/Delegate/List.pm
 lib/Fault/Delegate/File.pm
+lib/Fault/Delegate/Stderr.pm
 lib/Fault/Delegate/Stdout.pm
 lib/Fault/Delegate/Syslog.pm
 lib/Fault/Delegate/SimpleHttp.pm

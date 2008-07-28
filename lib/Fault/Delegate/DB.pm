@@ -3,32 +3,9 @@
 # Description:         Database Logger Delegate.
 # Original Authoer:    Dale Amon <amon@vnl.com> 
 # Revised by:          $Author: amon $ 
-# Date:                $Date: 2008-05-09 18:24:55 $ 
-# Version:             $Revision: 1.7 $
+# Date:                $Date: 2008-07-24 21:17:24 $ 
+# Version:             $Revision: 1.8 $
 # License:	       LGPL 2.1, Perl Artistic or BSD
-#
-# TODO	* Can I do more checking on the execute calls? [DNA20080418-?]
-#	* The host argument is not used. Dbh does not support
-#	  multiple or non-local db's.  [DMA20080418-?]
-#	* I need to exercise this code under the multiprocessing config
-#	  again to make sure none of the changes caused a problem.
-#	  [DMA20080418-?]
-#	* There is probably no point in preparing the statement handles
-#	  as I cannot use the efficiencies of reusing them due to the
-#	  multiprocessing problem. I have left it this way because in the
-#	  long run the problem will go away and I will someday be able to
-#	  just re-use handles and have as many of them as I want.
-#	  [DMA20080418-?]
-#       * I only handle MySQL at present. Someday I should see about 
-#	  generalizing that.	  [DMA20080418-?]
-#	* LOGGER: I should try to detect if mysql is not installed:
-#	  DBI connect('dbname','user',...) failed: 
-#	  Can't connect to local MySQL server through socket 
-#		'/var/run/mysqld/mysqld.sock' (2) 
-#	  	at /usr/share/perl/5.8/Fault/Dbh.pm [DMA20080418-?]
-#	* It would be nice if I could automatically create the log and
-#	  fault tables and anything else needed if they do not exist
-#	  when I attempt to initialize for the first time. [DM20080508-?]
 #
 #==============================================================================
 use strict;
@@ -411,6 +388,9 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: DB.pm,v $
+# Revision 1.8  2008-07-24 21:17:24  amon
+# Moved all todo notes to elsewhere; made Stderr the default delegate instead of Stdout.
+#
 # Revision 1.7  2008-05-09 18:24:55  amon
 # Bugs and changes due to pre-release testing
 #
