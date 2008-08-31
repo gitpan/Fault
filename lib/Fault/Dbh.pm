@@ -3,8 +3,8 @@
 # Description:          Objectifies Database handles so we only need one
 # Original Author:      Dale M. Amon
 # Revised by:           $Author: amon $ 
-# Date:                 $Date: 2008-05-07 17:44:17 $
-# Version:              $Revision: 1.3 $
+# Date:                 $Date: 2008-08-28 23:20:19 $
+# Version:              $Revision: 1.5 $
 # License:		LGPL 2.1, Perl Artistic or BSD
 #
 #=============================================================================
@@ -79,7 +79,7 @@ sub DESTROY {
 
 =head1 NAME
 
-Fault::Dbh - Database Handle abstraction
+ Fault::Dbh - Database Handle abstraction.
 
 =head1 SYNOPSIS
 
@@ -176,15 +176,23 @@ connections and does the real disconnect if the count reaches zero.
 
 =head1 Private Class Methods
 
-None.
+ None.
 
 =head1 Private Instance Methods
 
-None.
+ None.
+
+=head1 Errors and Warnings
+
+ None.
+
+=head1 KNOWN BUGS
+
+ See TODO.
 
 =head1 SEE ALSO
 
-DBI
+ DBI
 
 =head1 AUTHOR
 
@@ -196,6 +204,12 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: Dbh.pm,v $
+# Revision 1.5  2008-08-28 23:20:19  amon
+# perldoc section regularization.
+#
+# Revision 1.4  2008-08-17 21:56:37  amon
+# Make all titles fit CPAN standard.
+#
 # Revision 1.3  2008-05-07 17:44:17  amon
 # Documentation changes; removed use of package DMA::
 #

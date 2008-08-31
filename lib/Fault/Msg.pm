@@ -3,8 +3,8 @@
 # Description:         Internal message encapsulation class.
 # Original Author:     Dale M. Amon
 # Revised by:          $Author: amon $ 
-# Date:                $Date: 2008-07-24 21:17:24 $ 
-# Version:             $Revision: 1.6 $
+# Date:                $Date: 2008-08-28 23:20:19 $ 
+# Version:             $Revision: 1.8 $
 # License:	       LGPL 2.1, Perl Artistic or BSD
 #
 #=============================================================================
@@ -297,7 +297,7 @@ sub unstamped_log_line ($) {
 
 =head1 NAME
 
- Msg - Internal message encapsulation class
+ Fault::Msg - Internal message encapsulation class.
 
 =head1 SYNOPSIS
 
@@ -488,11 +488,17 @@ Return a line formatted for use in a syslog format:
 
  None.
 
+=head1 Errors and Warnings
+
+ None.
+
 =head1 KNOWN BUGS
 
 POSIX::isprint is used to filter whether a message is junk or not.
 It should probably make an effort to sanitize the string of format
 characters rather than reject a potentially good message.
+
+See TODO.
 
 =head1 Errors and Warnings
 
@@ -512,6 +518,12 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: Msg.pm,v $
+# Revision 1.8  2008-08-28 23:20:19  amon
+# perldoc section regularization.
+#
+# Revision 1.7  2008-08-17 21:56:37  amon
+# Make all titles fit CPAN standard.
+#
 # Revision 1.6  2008-07-24 21:17:24  amon
 # Moved all todo notes to elsewhere; made Stderr the default delegate instead of Stdout.
 #

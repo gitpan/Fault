@@ -3,8 +3,8 @@
 # Description:          A fault handling logger
 # Original Author:      Dale M. Amon
 # Revised by:           $Author: amon $ 
-# Date:                 $Date: 2008-07-24 21:17:24 $ 
-# Version:              $Revision: 1.10 $
+# Date:                 $Date: 2008-08-28 23:20:19 $ 
+# Version:              $Revision: 1.12 $
 # License:		LGPL 2.1, Perl Artistic or BSD
 #
 # NOTE  * Care must be taken that no matter what user API call is used
@@ -335,7 +335,7 @@ sub _validate_classname ($@) {
 
 =head1 NAME
 
-Fault::Logger.pm - A message logger proxy.
+ Fault::Logger - A message logger proxy.
 
 =head1 SYNOPSIS
 
@@ -692,7 +692,7 @@ from a debian package.]
 
 =head1 Instance Variables
 
-None.
+ None.
 
 =head1 Class Methods
 
@@ -890,15 +890,23 @@ has been logged yet or it has been explicitly cleared.
 
 =head1 Instance Methods
 
-None.
+ None.
 
 =head1 Private Class Methods
 
-None.
+ None.
 
 =head1 Private Instance Methods
 
-None.
+ None.
+
+=head1 Errors and Warnings
+
+ None.
+
+=head1 KNOWN BUGS
+
+ See TODO.
 
 =head1 SEE ALSO
 
@@ -916,6 +924,12 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: Logger.pm,v $
+# Revision 1.12  2008-08-28 23:20:19  amon
+# perldoc section regularization.
+#
+# Revision 1.11  2008-08-17 21:56:37  amon
+# Make all titles fit CPAN standard.
+#
 # Revision 1.10  2008-07-24 21:17:24  amon
 # Moved all todo notes to elsewhere; made Stderr the default delegate instead of Stdout.
 #

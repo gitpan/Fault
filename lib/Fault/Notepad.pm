@@ -3,8 +3,8 @@
 # Description:         A notepad for random text messages.
 # Original Author:     Dale M. Amon
 # Revised by:          $Author: amon $ 
-# Date:                $Date: 2008-07-28 10:57:37 $ 
-# Version:             $Revision: 1.5 $
+# Date:                $Date: 2008-08-28 23:20:19 $ 
+# Version:             $Revision: 1.7 $
 # License:	       LGPL 2.1, Perl Artistic or BSD
 #
 #=============================================================================
@@ -84,7 +84,7 @@ sub sprint ($) {
 
 =head1 NAME
 
- Fault::Notepad.pm - A notepad for random text messages.
+ Fault::Notepad - A notepad for random text messages.
 
 =head1 SYNOPSIS
 
@@ -196,7 +196,7 @@ Print contents of Notepad verbatim to a string.
 
 =head1 KNOWN BUGS
 
- None.
+ See TODO.
 
 =head1 SEE ALSO
 
@@ -212,6 +212,12 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: Notepad.pm,v $
+# Revision 1.7  2008-08-28 23:20:19  amon
+# perldoc section regularization.
+#
+# Revision 1.6  2008-08-17 21:56:37  amon
+# Make all titles fit CPAN standard.
+#
 # Revision 1.5  2008-07-28 10:57:37  amon
 # Dropped last of tsag/dsig; new addObject method; sprint bugfix; newlines added to prints.
 #

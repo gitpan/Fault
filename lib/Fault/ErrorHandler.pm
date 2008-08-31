@@ -3,8 +3,8 @@
 # Description:          An error handler.
 # Original Author:      Dale M. Amon
 # Revised by:           $Author: amon $ 
-# Date:                 $Date: 2008-05-09 18:24:55 $ 
-# Version:              $Revision: 1.4 $
+# Date:                 $Date: 2008-08-28 23:20:19 $ 
+# Version:              $Revision: 1.6 $
 # License:		LGPL 2.1, Perl Artistic or BSD
 #
 #=============================================================================
@@ -53,7 +53,7 @@ sub die {
 
 =head1 NAME
 
-Fault::ErrorHandler.pm - A base error handler class
+ Fault::ErrorHandler - A base error handler class.
 
 =head1 SYNOPSIS
 
@@ -124,19 +124,27 @@ message, it prints "<Null warning message>".
 
 =head1 Instance Methods
 
-None.
+ None.
 
 =head1 Private Class Methods
 
-None.
+ None.
 
 =head1 Private Instance Methods
 
-None.
+ None.
+
+=head1 Errors and Warnings
+
+ None.
+
+=head1 KNOWN BUGS
+
+ See TODO.
 
 =head1 SEE ALSO
 
-None.
+ None.
 
 =head1 AUTHOR
 
@@ -148,6 +156,12 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: ErrorHandler.pm,v $
+# Revision 1.6  2008-08-28 23:20:19  amon
+# perldoc section regularization.
+#
+# Revision 1.5  2008-08-17 21:56:37  amon
+# Make all titles fit CPAN standard.
+#
 # Revision 1.4  2008-05-09 18:24:55  amon
 # Bugs and changes due to pre-release testing
 #

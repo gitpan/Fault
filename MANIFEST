@@ -1,7 +1,10 @@
 MANIFEST
 Changes
-README
+README.perl
 COPYING
+TODO
+TODONE
+Version
 licenses/Artistic
 licenses/BSD
 licenses/LGPL-2.1

@@ -3,8 +3,8 @@
 # Description:          A Debug print controller.
 # Original Author:      Dale M. Amon
 # Revised by:           $Author: amon $ 
-# Date:                 $Date: 2008-05-07 17:43:05 $ 
-# Version:              $Revision: 1.3 $
+# Date:                 $Date: 2008-08-28 23:20:19 $ 
+# Version:              $Revision: 1.5 $
 # License:		LGPL 2.1, Perl Artistic or BSD
 #
 #=============================================================================
@@ -65,7 +65,7 @@ sub level {
 
 =head1 NAME
 
-Fault::DebugPrinter.pm - A Debug print controller with levels.
+ Fault::DebugPrinter - A Debug print controller with levels.
 
 =head1 SYNOPSIS
 
@@ -85,7 +85,7 @@ Fault::DebugPrinter.pm - A Debug print controller with levels.
 
 =head1 Inheritance
 
- Base Class
+ UNIVERSAL
 
 =head1 Description
 
@@ -172,19 +172,27 @@ thus doubles as a 'read current diagnostic level' command.
 
 =head1 Instance Methods
 
-None
+ None
 
 =head1 Private Class Methods
 
-None.
+ None.
 
 =head1 Private Instance Methods
 
-None.
+ None.
+
+=head1 Errors and Warnings
+
+ None.
+
+=head1 KNOWN BUGS
+
+ See TODO.
 
 =head1 SEE ALSO
 
-None.
+ None.
 
 =head1 AUTHOR
 
@@ -196,6 +204,12 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: DebugPrinter.pm,v $
+# Revision 1.5  2008-08-28 23:20:19  amon
+# perldoc section regularization.
+#
+# Revision 1.4  2008-08-17 21:56:37  amon
+# Make all titles fit CPAN standard.
+#
 # Revision 1.3  2008-05-07 17:43:05  amon
 # Documentation changes
 #

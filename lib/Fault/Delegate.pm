@@ -3,8 +3,8 @@
 # Description:         Abstract Superclass for Logger Delegates.
 # Original Author:     Dale M. Amon
 # Revised by:          $Author: amon $ 
-# Date:                $Date: 2008-05-08 20:22:50 $ 
-# Version:             $Revision: 1.7 $
+# Date:                $Date: 2008-08-28 23:20:19 $ 
+# Version:             $Revision: 1.8 $
 # License:	       LGPL 2.1, Perl Artistic or BSD
 #
 #=============================================================================
@@ -329,6 +329,10 @@ problem.
 Local warning messages are printed if the logging mechanism cannot be reached
 or has any problems whatever. You cannot log to a logger that is not working!
 
+=head1 KNOWN BUGS
+
+ See TODO.
+
 =head1 SEE ALSO
 
  Fault::Logger
@@ -343,6 +347,9 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: Delegate.pm,v $
+# Revision 1.8  2008-08-28 23:20:19  amon
+# perldoc section regularization.
+#
 # Revision 1.7  2008-05-08 20:22:50  amon
 # Minor bug fixes; shifted fault table and initfault from Logger to List
 #

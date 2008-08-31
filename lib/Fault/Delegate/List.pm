@@ -3,8 +3,8 @@
 # Description:         Internal class for managing a list of delegates.
 # Original Author:     Dale M. Amon
 # Revised by:          $Author: amon $ 
-# Date:                $Date: 2008-05-09 18:24:55 $ 
-# Version:             $Revision: 1.3 $
+# Date:                $Date: 2008-08-28 23:20:19 $ 
+# Version:             $Revision: 1.5 $
 # License:	       LGPL 2.1, Perl Artistic or BSD
 #
 #=============================================================================
@@ -141,7 +141,7 @@ sub trans11 ($$@) {
 
 =head1 NAME
 
- List - Internal class for managing a list of delegates.
+ Fault::Delegate::List - Internal class for managing a list of delegates.
 
 =head1 SYNOPSIS
 
@@ -254,6 +254,10 @@ data from it.
 
  None.
 
+=head1 KNOWN BUGS
+
+ See TODO.
+
 =head1 SEE ALSO
 
  None.
@@ -268,6 +272,12 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: List.pm,v $
+# Revision 1.5  2008-08-28 23:20:19  amon
+# perldoc section regularization.
+#
+# Revision 1.4  2008-08-17 21:56:37  amon
+# Make all titles fit CPAN standard.
+#
 # Revision 1.3  2008-05-09 18:24:55  amon
 # Bugs and changes due to pre-release testing
 #

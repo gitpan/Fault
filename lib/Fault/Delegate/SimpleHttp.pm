@@ -3,8 +3,8 @@
 # Description:         Logger delegate for simple http logging.
 # Original Author:     Dale M. Amon
 # Revised by:          $Author: amon $ 
-# Date:                $Date: 2008-07-24 21:17:24 $ 
-# Version:             $Revision: 1.8 $
+# Date:                $Date: 2008-08-28 23:20:19 $ 
+# Version:             $Revision: 1.10 $
 # License:	       LGPL 2.1, Perl Artistic or BSD
 #
 #=============================================================================
@@ -294,7 +294,7 @@ sub initfaults ($) {
 
 =head1 NAME
 
- Fault::Delegate::SimpleHttp
+ Fault::Delegate::SimpleHttp - Logger delegate for simple http logging.
 
 =head1 SYNOPSIS
 
@@ -509,6 +509,10 @@ the Fault:Delegate log and test methods.
 Local warning messages are issued if the web logger cannot be reached or has 
 any problems whatever. You cannot log to a web logger that is not working!
 
+=head1 KNOWN BUGS
+
+ See TODO.
+
 =head1 SEE ALSO
 
  Fault::Logger, Fault::Delegate, Fault::Msg, Net::HTTP,
@@ -524,6 +528,12 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: SimpleHttp.pm,v $
+# Revision 1.10  2008-08-28 23:20:19  amon
+# perldoc section regularization.
+#
+# Revision 1.9  2008-08-17 21:56:37  amon
+# Make all titles fit CPAN standard.
+#
 # Revision 1.8  2008-07-24 21:17:24  amon
 # Moved all todo notes to elsewhere; made Stderr the default delegate instead of Stdout.
 #

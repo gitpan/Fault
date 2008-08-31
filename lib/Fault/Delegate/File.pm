@@ -1,10 +1,10 @@
 #================================ File.pm ====================================
 # Filename:             File.pm
-# Description:          File logger delegate
+# Description:          File logger delegate.
 # Original Author:      Dale M. Amon
 # Revised by:           $Author: amon $ 
-# Date:                 $Date: 2008-05-09 18:24:55 $ 
-# Version:              $Revision: 1.7 $
+# Date:                 $Date: 2008-08-28 23:20:19 $ 
+# Version:              $Revision: 1.9 $
 # License:		LGPL 2.1, Perl Artistic or BSD
 #
 #=============================================================================
@@ -92,7 +92,7 @@ sub new ($$) {
 
 =head1 NAME
 
-Fault::Delegate::File - File logger delegate
+ Fault::Delegate::File - File logger delegate.
 
 =head1 SYNOPSIS
 
@@ -196,6 +196,10 @@ the Fault:Delegate log and test methods.
 Local warning messages are issued if the db file cannot be opened or has 
 any problems whatever. 
 
+=head1 KNOWN BUGS
+
+ See TODO.
+
 =head1 SEE ALSO
 
 Fault::Logger, Fault::Delegate, Fault::Msg,
@@ -211,6 +215,12 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: File.pm,v $
+# Revision 1.9  2008-08-28 23:20:19  amon
+# perldoc section regularization.
+#
+# Revision 1.8  2008-08-17 21:56:37  amon
+# Make all titles fit CPAN standard.
+#
 # Revision 1.7  2008-05-09 18:24:55  amon
 # Bugs and changes due to pre-release testing
 #

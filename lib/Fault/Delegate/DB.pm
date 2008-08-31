@@ -1,14 +1,13 @@
 #==============================================================================
 # Filename:            DB.pm
 # Description:         Database Logger Delegate.
-# Original Authoer:    Dale Amon <amon@vnl.com> 
+# Original Authoer:    Dale M. Amon
 # Revised by:          $Author: amon $ 
-# Date:                $Date: 2008-07-24 21:17:24 $ 
-# Version:             $Revision: 1.8 $
+# Date:                $Date: 2008-08-28 23:20:19 $ 
+# Version:             $Revision: 1.10 $
 # License:	       LGPL 2.1, Perl Artistic or BSD
 #
-#==============================================================================
-use strict;
+#==============================================================================use strict;
 use Fault::Dbh;
 use Fault::DebugPrinter;
 use Fault::ErrorHandler;
@@ -201,7 +200,7 @@ sub initfaults ($) {
 
 =head1 NAME
 
-Fault::Delegate::DB - Database Logger Delegate
+ Fault::Delegate::DB - Database Logger Delegate.
 
 =head1 SYNOPSIS
 
@@ -373,6 +372,10 @@ the Fault:Delegate log and test methods.
 Local warning messages are issued if the db server cannot be reached or has 
 any problems whatever. 
 
+=head1 KNOWN BUGS
+
+ See TODO.
+
 =head1 SEE ALSO
 
 Fault::Logger, Fault::Delegate, Fault::Msg, Fault::Dbh, 
@@ -388,6 +391,12 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: DB.pm,v $
+# Revision 1.10  2008-08-28 23:20:19  amon
+# perldoc section regularization.
+#
+# Revision 1.9  2008-08-17 21:56:37  amon
+# Make all titles fit CPAN standard.
+#
 # Revision 1.8  2008-07-24 21:17:24  amon
 # Moved all todo notes to elsewhere; made Stderr the default delegate instead of Stdout.
 #

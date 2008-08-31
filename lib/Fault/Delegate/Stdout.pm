@@ -3,12 +3,13 @@
 # Description:          Stdout print logger delegate.
 # Original Author:      Dale M. Amon
 # Revised by:           $Author: amon $ 
-# Date:                 $Date: 2008-05-07 18:14:55 $ 
-# Version:              $Revision: 1.4 $
+# Date:                 $Date: 2008-08-30 19:22:27 $ 
+# Version:              $Revision: 1.7 $
 # License:		LGPL 2.1, Perl Artistic or BSD
 #
 #=============================================================================
 use strict;
+use Fault::DebugPrinter;
 use Fault::Delegate;
 use Fault::Msg;
 
@@ -34,6 +35,15 @@ sub _write ($$) {
     return 1;
 }
 
+#-----------------------------------------------------------------------------
+# Override so we only print annoying init message on the terminal if we are
+# debugging.
+
+sub test ($) {
+  my $s = shift;
+  (Fault::DebugPrinter->level > 0) ? $s->SUPER::test : 1;
+}
+
 #=============================================================================
 #		      Primary Logger Callback Methods
 #=============================================================================
@@ -46,13 +56,14 @@ sub _write ($$) {
 
 =head1 NAME
 
-Fault::Delegate::Stdout - Print logger delegate
+ Fault::Delegate::Stdout - Print logger delegate.
 
 =head1 SYNOPSIS
 
  use Fault::Delegate::Stdout;
  $self = Fault::Delegate::Stdout->new;
  $okay = $self->log ($msg);
+ $bool = $self->test;
 
 =head1 Inheritance
 
@@ -124,6 +135,19 @@ None.
 
 =over 4
 
+=item B<$bool = $self-E<gt>test>
+
+If the debug level has been set to at least one in Fault::DebugPrinter,
+it executes the test method of the parent, Fault::Delegate class. Otherwise
+it always returns true. This was added so that an annoying initial message
+from the Fault system will not be printed on a terminal unless it is
+actually wanted for debugging purposees.
+
+=item B<$bool = $self-E<gt>test>
+
+Executes a _connect, a log write and a _disconnect. It returns true if
+this succeeds. This is useful in personalized subclass new methods.
+
 =item B<$bool = $self-E<gt>_write ($msg)>
 
 Impliments the above override to the internal family protocol utilized by 
@@ -135,6 +159,10 @@ the Fault:Delegate log and test methods.
 
 Local warning messages are issued if the sys logger cannot be reached or has 
 any problems whatever. 
+
+=head1 KNOWN BUGS
+
+ See TODO.
 
 =head1 SEE ALSO
 
@@ -150,8 +178,18 @@ Dale Amon <amon@vnl.com>
 #                                CVS HISTORY
 #=============================================================================
 # $Log: Stdout.pm,v $
+# Revision 1.7  2008-08-30 19:22:27  amon
+# Prevent test method from printing to terminal unless debugging.
+#
+# Revision 1.6  2008-08-28 23:20:19  amon
+# perldoc section regularization.
+#
+# Revision 1.5  2008-08-17 21:56:37  amon
+# Make all titles fit CPAN standard.
+#
 # Revision 1.4  2008-05-07 18:14:55  amon
-# Simplification and standardization. Much more is inherited from Fault::Delegate.
+# Simplification and standardization. Much more is inherited from 
+# Fault::Delegate.
 #
 # Revision 1.3  2008-05-04 14:40:56  amon
 # Updates to perl doc; dropped subclass new method..
